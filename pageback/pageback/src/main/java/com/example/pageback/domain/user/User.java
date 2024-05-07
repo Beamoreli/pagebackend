@@ -1,26 +1,22 @@
 package com.example.pageback.domain.user;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "users")
 @Getter
 @Setter
-@Table(name = "Users")
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
-
-    @id
-    @GeneratedValue (strategy = GenerationType.UUID)
-    private String Id;
-    private String Name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
+    private String name;
     private String email;
     private String password;
 }
